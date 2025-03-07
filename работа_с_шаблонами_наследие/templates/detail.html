@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} detail {% endblock %}
+
+{% block content %}
+    {% if todo %}
+        <h1>Название: {{ todo.title }}</h1>
+        <p>Статус: {{ todo.status }}</p>
+        <p>Создана: {{ todo.created_at }}</p>
+        <a href="{% url 'list' %}">Вернуться</a>
+    {% endif %}
+{% endblock %}  

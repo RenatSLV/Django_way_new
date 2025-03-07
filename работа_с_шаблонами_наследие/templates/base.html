@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} List {% endblock  %}</title>
+</head>
+<body>
+    {% block content %}
+        <a href="{% url 'add' %}">Создать</a>
+        {% for todo in todos %}
+            <h1>Название: {{ todo.title }}</h1>
+            <p>Статус: {{ todo.status }}</p>
+            <p>Создана: {{ todo.created_at }}</p>
+            <a href="{% url 'delete' id=todo.id %}">Удалить</a>
+            <br>
+            <br>
+            <a href="{% url 'detail' todo.id %}">достать эту запись</a>
+        {% endfor %}
+    {% endblock  %}
+</body>
+</html>
