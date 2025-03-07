@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .btn{
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border-radius: 15px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+    </style>
+    <a class="btn" href="{% url 'ListUsers' %}">Все пользователи</a>
+    <br>
+    <br>
+    <br>
+    <a class="btn" href="{% url 'DetailUser' %}">Один пользователь по ID</a>
+
+    <h1>Создать пользователья</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name</label>
+        <input type="text" name="name" required>
+        <br>
+        <label for="password">Password</label>
+        <input type="text" name="password" required>
+        <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
+        <br>
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+</html>

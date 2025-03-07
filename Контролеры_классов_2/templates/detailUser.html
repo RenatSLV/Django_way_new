@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .btn{
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border-radius: 15px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+    </style>
+    <form method="post">
+        {% csrf_token %}
+        <label for="id">ID</label>
+        <input type="number" name="id" required>
+        <button type="submit">Получить</button>
+    </form>
+    {% if use %}
+        <h1>Id Пользователя: {{ use.id }}</h1>
+        <p>Имя: {{ use.name }}</p>
+        <p>Email: {{ use.email }}</p>
+        <p>Пароль: {{ use.password }}</p>
+    {% endif %}
+    <br>
+    <a class="btn" href="{% url 'CreateUser' %}">Вернуться</a>
+</body>
+</html>

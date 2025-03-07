@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .btn{
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border-radius: 15px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+    </style>
+    <h1>Все пользователи</h1>
+    {% for user in Users %}
+        <h1>Id Пользователя: {{ user.id }}</h1>
+        <p>Имя: {{ user.name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Пароль: {{user.password }}</p>
+    {% endfor %}
+    <a class="btn" href="{% url 'CreateUser' %}">Вернуться</a>
+</body>
+</html>
