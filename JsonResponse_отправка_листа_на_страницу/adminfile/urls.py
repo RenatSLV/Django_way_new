@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from firstapp.views import index
+from JsonApp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('firstapp/', index)
+    path('', index, name='index'),
 ]
