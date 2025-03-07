@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block title %}Add User{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ formset.management_form }}
+
+        {% for form in formset %}
+            {{ form.as_p }}
+        {% endfor %}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}
