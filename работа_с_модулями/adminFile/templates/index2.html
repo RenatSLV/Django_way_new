@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>news list</title>
+</head>
+<body>
+    <h1>News List</h1>
+    {% for new in queryset %}
+        <p>Title: {{ new.title }}</p>
+        <p>Price: {{ new.price }}</p>
+        <p>Discount price: {{ new.discount_price }}</p>
+    {% endfor %}
+</body>
+</html>
