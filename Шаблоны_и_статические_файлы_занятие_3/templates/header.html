@@ -1,0 +1,20 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+
+{% block content %}
+    <nav class="navbar">
+        <img class="img" src="{% static 'img/logo.webp' %}" width="85px" height="75px" alt="Logo">
+        <div class="content">
+            <div class="linkBtns">
+                <a href="" class="btns">Главноя</a>
+                <a href="" class="btns">О нас</a>
+                <a href="" class="btns">Контакты</a>
+            </div>
+            <div class="registerBtns">
+                <a href="" class="btns">Войти</a>
+                <a href="" class="btns">Регестрация</a>
+            </div>
+        </div>
+    </nav>
+{% endblock %}

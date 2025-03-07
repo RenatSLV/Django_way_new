@@ -1,0 +1,20 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+{% block content %}
+    <main>
+        <div class="block">
+            {% for film in films %}
+                <div class="container">
+                    <img src="{{ film.img.url }}" alt="ImgFilms">
+                    <h3>Название: {{film.name}}</h3>
+                    <p>Год: {{film.year}}</p>
+                    <p>Жанр: {{film.get_zhanr_display}}</p>
+                    <p>Страна: {{film.contry}}</p>
+                    <p>Просмотров: {{film.view}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

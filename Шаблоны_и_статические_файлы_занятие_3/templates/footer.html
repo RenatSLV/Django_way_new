@@ -1,0 +1,16 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+{% block content %}
+    <footer>
+        <div class="footerDiv">
+            <img src="{% static 'img/logo.webp' %}" alt="Logo" width="50px" height="50px">
+            <div class="Btnlinks">
+                <a href="" class="links">Главноя</a>
+                <a href="" class="links">О нас</a>
+                <a href="" class="links">Контакты</a>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

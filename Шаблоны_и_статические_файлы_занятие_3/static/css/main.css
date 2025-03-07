@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+}
+.block{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    background-color: cornsilk;
+}
+.container{
+    width: 268px;
+    text-align: center;
+    background-color: burlywood;
+    margin: 20px;
+}
