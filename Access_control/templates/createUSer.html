@@ -1,0 +1,23 @@
+{% extends 'listUser.html' %}
+
+{% block title %}Create User{% endblock %}
+
+{% block content %}
+    <h2>Create User</h2>
+
+    <form method="post">
+        {% csrf_token %}
+    
+        <input type="text" name="user_name" placeholder="  Name:" required>
+        <input type="text" name="user_password" placeholder="  Password:" required>
+
+        <h3>List Group</h3>
+        {% for group in all_Groups %}
+            <input type="checkbox" name="user_group", value="{{ group.name }}", id="perm_{{ group.name }}">
+            <label for="perm_{{ group.name }}">{{ group.name }}</label><br>
+        {% endfor %}
+        <button type="submit">Create</button>
+    </form>
+    <br>
+    <a href="{% url 'create_group' %}">Create group</a>
+{% endblock %}

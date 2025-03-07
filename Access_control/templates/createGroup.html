@@ -1,0 +1,24 @@
+{% extends 'listUser.html' %}
+
+{% block title %}Create Group{% endblock %}
+
+{% block content %}
+    <h2>Create Group</h2>
+    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+    
+        <input type="text" name="name" placeholder="  Name:" required>
+
+        <h3>List permissions</h3>
+        {% for permission in all_permisions %}
+            <input type="checkbox" name="permission", value="{{ permission.id }}", id="perm_{{ permission.id }}">
+            <label for="perm_{{ permission.id }}">{{ permission.name }}</label><br>
+        {% endfor %}
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}

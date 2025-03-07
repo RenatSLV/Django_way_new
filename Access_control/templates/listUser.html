@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}List{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+        {% if user.is_authenticated %}
+            <h2>List User</h2>
+            {% for user in users %}
+                <h3>Name: {{ user.username }}</h3>
+                <p>Group: 
+                    {% if user.groups.all %}
+                        {% for group in user.groups.all %}
+                            {{group.name}}
+                        {% endfor %}
+                    {% else %}
+                        This user hasn't groups
+                    {% endif %}
+                </p>
+            {% endfor %}
+            <a href="{% url 'LogOut' %}">Log out</a>
+        {% else %}
+            <h2>You don't log in</h2>
+            <a href="{% url 'create_user' %}">Create user</a>
+            <a href="{% url 'LogIn' %}">Log in</a>
+        {% endif %}
+    {% endblock %}
+</body>
+</html>
