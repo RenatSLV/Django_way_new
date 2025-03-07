@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} List {% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+        <h1>Фильтр по цене и году </h1>
+        {% for book in books %}
+            {% if book.cost == 1000 %}
+                <h1>Только те кто равны по цене 1000</h1>
+                <p>Название: {{ book.name }}</p>
+                <p>Автор: {{ book.author }}</p>
+                <p>Год: {{ book.year }}</p>
+                <p>Цена: {{ book.cost }}</p>
+
+            {% elif book.cost == 3000 %}
+                <h1> только те кто равны по цене в 3000</h1>
+                <p>Название: {{ book.name }}</p>
+                <p>Автор: {{ book.author }}</p>
+                <p>Год: {{ book.year }}</p>
+                <p>Цена: {{ book.cost }}</p>
+
+            {% elif book.cost > 3000 and book.year > 2000 %}
+                <h1>Только те кто больше по цене 3000 и году 2000 </h1>
+                <p>Название: {{ book.name }}</p>
+                <p>Автор: {{ book.author }}</p>
+                <p>Год: {{ book.year }}</p>
+                <p>Цена: {{ book.cost }}</p>
+            {% endif %}
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>
