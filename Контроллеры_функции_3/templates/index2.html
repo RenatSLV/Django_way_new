@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for item in users %}
+        <p>id: {{item.id}}</p>
+        <p>Name: {{item.name}}</p>
+        <p>Password: {{item.password}}</p>
+    {% endfor %}
+    <a href="/index/">Взад</a>
+</body>
+</html>
