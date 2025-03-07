@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        All Task
+    </title>
+</head>
+<body>
+    <style>
+        .btn{
+            width: 200px;
+            height: 20px;
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            background-color: blue;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover{
+            background-color: darkblue;
+        }
+    </style>
+
+    <h1>Лист Задач</h1>
+    <a href="/Add/" class="btn">Добавить задачу</a>
+    <br>
+    <a href="/delete/"class="btn">Удалить задачу</a>
+    <br>
+    <a href="/GetOne/"class="btn">Вытащить одну задачу</a>
+    <div>
+        {% for task in Alltask %}
+            <h1>Задача: {{ task.Task }} ID: {{ task.id }}</h1>
+            <p><b>Подробноя информация:</b> {{ task.Task_Info }}</p>
+            <p><b>Было задана:</b> {{ task.published }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Одна задача по ID</title>
+</head>
+<body>
+    <style>
+        .btn{
+            width: 200px;
+            height: 20px;
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            background-color: blue;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover{
+            background-color: darkblue;
+        }
+    </style>
+    <H1>Одна задача по ID</H1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="number" name="id" placeholder="ID">   
+        <br>
+        <br> 
+        <button type="submit">Достать одну задачу</button>
+    </form>
+
+    <br>
+    <a href="/AllTask/" class="btn">Вернуться</a>
+
+    {% if obj %}
+        <h1>Задача: {{obj.Task}}</h1>
+        <h2>Подробноя информация: {{obj.Task_Info}}</h2>
+        <h2>Было задана: {{obj.published}}</h2>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление Задачи</title>
+</head>
+<body>
+    <h1>Добавление Задачи</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="Task", placeholder="Задача">
+        <br>
+        <br>
+        <Textarea name="Task_Info" placeholder="Информация о Задачи"></Textarea>
+        <br><br>
+        <Button type="submit">Сохраниить</Button>
+    </form>
+</body>
+</html>
