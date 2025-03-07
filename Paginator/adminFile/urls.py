@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from firstapp.views import index
+from App1.views import Book_list_views_cl
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('firstapp/', index)
+    path('', Book_list_views_cl.as_view(), name='listBook')
 ]
