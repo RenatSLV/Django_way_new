@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добовление данных</title>
+</head>
+<body>
+    <H1>Добовление данных</H1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="task" placeholder="Задача">   
+        <br>
+        <br> 
+        <textarea name="taskInfo" placeholder="Информация о задаче"></textarea>
+        <br>
+        <br>
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .btn{
+            width: 200px;
+            height: 20px;
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            background-color: blue;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover{
+            background-color: darkblue;
+        }
+    </style>
+
+    <h1>Лист задач</h1>
+    <a href="/addTask/" class="btn">Добавить задачу</a>
+    <br>
+    <a href="/deleteTask/" class="btn">Удалить задачу</a>
+    <hr>
+    <div>
+        {% for task in AllTask %}
+            <h1>Задача: {{ task.task }} ID: {{ task.id }}</h1>
+            <p><b>Подробноя информация:</b> {{ task.taskInfo }}</p>
+            <p><b>Было задана:</b> {{ task.published }}</p>
+        {% endfor %}
+    </div>
+    <hr>
+</body>
+</html>
