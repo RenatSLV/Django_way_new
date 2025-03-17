@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+</head>
+<body>
+    <table border="1" style="width: 400px; height: 250px; font-size: 25px; text-align: center;">
+        <tr>
+            <th>Name</th>
+            <th>Course</th>
+        </tr>
+            {% for enrollment in enrollments %}
+            <tr>
+                <td>
+                    {{ enrollment.student.first_name }}
+                </td>
+                <td>
+                    {{ enrollment.course.title }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
