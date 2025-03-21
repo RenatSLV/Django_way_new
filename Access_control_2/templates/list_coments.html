@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}List{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+        {% for coment in coments %}
+            <div style="border: 1px solid black; padding: 5px; border-radius: 1em; width: 250px; margin: 10px;">
+                <p>{{ coment.content_object }} - {{ coment.content }}</p>
+            </div>
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>
