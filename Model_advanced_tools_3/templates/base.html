@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Users{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+        {% for user in users %}
+            <h2>Name: {{ user.owner }}</h2>
+            <h4>Balance: {{ user.balance }} &#8376;</h4>
+        {% endfor %}
+        <br>
+        <a href="{% url 'transfer_money' %}" 
+        style="text-decoration: none; color: white; background-color: cadetblue; padding: 1em; border-radius: 1em;">Перевод</a>
+    {% endblock %}
+</body>
+</html>
