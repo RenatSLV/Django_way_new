@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+        <h2>Home</h2>
+        {% for client in clients %}
+            <h3>Name: {{ client.name }}</h3>
+            <h3>Age: {{ client.age }}</h3>
+            <hr>
+        {% endfor %}
+        <a href="{% url 'add_Client' %}">Add Client</a>
+    {% endblock %}
+</body>
+</html>
