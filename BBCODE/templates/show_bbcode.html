@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список BBCode</title>
+</head>
+<body>
+    <h1>Список BBCode</h1>
+
+    {% for entry in bbcode_entries %}
+        <div style="margin-bottom:20px; border:1px solid #ccc; padding:10px;">
+            <h2>BBCode {{ forloop.counter }}</h2>
+            <div>{{ entry.content|safe }}</div>
+        </div>
+    {% empty %}
+        <p>Нет данных для отображения.</p>
+    {% endfor %}
+</body>
+</html>

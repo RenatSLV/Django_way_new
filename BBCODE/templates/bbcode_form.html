@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить BBCode</title>
+</head>
+<body>
+    <h1>Добавить BBCode</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="bbcode_input" cols="60" rows="10" placeholder="[b]Твой BBCode тут[/b]"></textarea>
+        <br>
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>
