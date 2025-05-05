@@ -1,0 +1,16 @@
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <p>{{ "Привет, мир!"|remove_vowels }}</p>  {# Вывод: "Првт, мр!" #}
+    <p>{{ "Django "|repeat:3 }}</p>             {# Вывод: "Django Django Django " #}
+
+    <p>Сейчас: {% current_time "%d.%m.%Y %H:%M" %}</p>
+    <p>Слов в тексте: {% word_count "Как же я люблю Django!" %}</p>
+</body>
+</html>
