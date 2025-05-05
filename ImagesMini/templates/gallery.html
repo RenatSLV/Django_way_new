@@ -1,0 +1,21 @@
+{% load thumbnail %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Галерея</h1>
+    {% for img in images %}
+        <div>
+            <p>{{ img.title }}</p>
+            {% thumbnail img.image "200x200" crop="center" as thumb %}
+                <img src="{{ thumb.url }}" alt="{{ img.title }}">
+            {% endthumbnail %}
+        </div>
+    {% endfor %}
+    <a href="{% url 'upload_image' %}">Загрузить еще</a>
+</body>
+</html>
