@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h2>Список загруженных документов</h2>
+    <ul>
+        {% for p in photo %}
+            <li>
+                {{ p.title }} — 
+                <a href="{{ p.image.url }}">Скачать фото</a>
+                <a href="{{ p.file.url }}">Скачать файл</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'upload_document' %}">Загрузить новый</a>
+</body>
+</html>
