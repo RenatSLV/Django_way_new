@@ -1,0 +1,8 @@
+{% extends "main/base.html" %}
+{% block content %}
+<h2>Результат</h2>
+<p>Имя из сессии: {{ name }}</p>
+<p>Имя из cookie: {{ cookie_name }}</p>
+<p>Подписанное имя: {{ verified_name }}</p>
+<a href="{% url 'index' %}">Назад</a>
+{% endblock %}

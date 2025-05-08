@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Project</title>
+    <style>
+        .alert { padding: 10px; border: 1px solid #ccc; margin: 10px 0; }
+        .alert-success { background: #d4edda; }
+        .alert-danger { background: #f8d7da; }
+    </style>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
+</body>
+</html>
