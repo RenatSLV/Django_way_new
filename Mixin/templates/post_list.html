@@ -1,0 +1,16 @@
+<h1>Посты</h1>
+
+{% if user.is_authenticated %}
+    <p>Привет, {{ user.username }} | <a href="{% url 'logout' %}">Выход</a></p>
+    <a href="{% url 'post-create' %}">Создать пост</a>
+{% else %}
+    <a href="{% url 'login' %}">Войти</a>
+{% endif %}
+
+<ul>
+    {% for post in posts %}
+        <li>{{ post.title }} - {{ post.author }}</li>
+    {% empty %}
+        <li>Нет постов</li>
+    {% endfor %}
+</ul>
